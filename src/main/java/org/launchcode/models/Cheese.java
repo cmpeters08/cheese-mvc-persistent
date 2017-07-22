@@ -30,12 +30,14 @@ public class Cheese {
     @ManyToMany(mappedBy = "cheeses")
     private List<Menu> menus;
 
+    public Cheese() { }
+
     public Cheese(String name, String description) {
         this.name = name;
         this.description = description;
     }
 
-    public Cheese() { }
+
 
 
     public Category getCategory() {
