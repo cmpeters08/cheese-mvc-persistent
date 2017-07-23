@@ -4,19 +4,16 @@
 <h1 th:text="${title}">Default Title</h1>
 
 <nav th:replace="fragments :: navigation"></nav>
-<form method="post" th:object="${form}" action="/menu/add-item">
-
-    <div class="form-group">
+<form method="post" style="max-width:600px;" th:object="${form}" action="/menu/add-item">
     <label th:for="cheeseId">Cheese</label>
-    <select name ="cheeseId">
+    <select name = "cheeseId">
         <option th:each="cheese : *{cheeses}"
                 th:text="${cheese.name}"
                 th:value="${cheese.id}"></option>
-    <span th:errors="*{cheeseId}" class="error"></span>
     </select>
-   </div>
+    <span th:errors="*{cheeseId}" class="error"></span>
     <input type="hidden" name="menuId" th:value="*{menu.id}" />
-    <input type="submit" value="Add Menu Item" />
+    <input type="submit", value="Add Menu Item" />
 </form>
 
 </body>
